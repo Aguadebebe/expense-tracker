@@ -1,0 +1,17 @@
+
+
+body {
+  background-color:rgb(221, 221, 100);
+}
+
+.App-container {
+  background-color:bisque;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-style: oblique;
+  font-size: 1.2em;
+  margin-top: 10vh;
+}
