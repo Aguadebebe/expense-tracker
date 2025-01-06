@@ -12,37 +12,72 @@ const Expense = () => {
     const [ expenseAmount, setExpenseAmount ] = useState("");
     const [ expenseDescription, setExpenseDescription ] = useState("");
     const [ expenseDate, setExpenseDate ] = useState("");
+    const [ errors, setErrors ] = useState({
+        description: "",
+        amount: "",
+        date: ""
+        });
+    
+    
 
     function updateExpenseDescription(value) {
-        setExpenseDescription(value);
-     }
+         setExpenseDescription(value);
+        
+       }
+     
     
      function updateExpenseAmount(value) {
-        setExpenseAmount(value);
-         
+         setExpenseAmount(value);
     }
     
     function updateExpenseDate(value) {
-        setExpenseDate(value);
+         setExpenseDate(value);
     }
+    
+     
+     
 
     function handleFormSubmit(event) {
         event.preventDefault();
-        setExpenses([{ 
+
+         let newErrors = { description: "", amount: "", date: "" };
+         
+         if ( expenseDescription === "") {
+            newErrors.description = "Please enter a description";
+         }
+
+         if ( expenseAmount === "" || isNaN(expenseAmount)) {
+            newErrors.amount = "Please enter a number";
+         }
+
+         if ( expenseDate === "") {
+            newErrors.date = "Please enter a date";
+         }
+
+         if ( newErrors.description || newErrors.amount || newErrors.date) {
+               setErrors(newErrors); 
+               return;
+         }
+
+
+        let expenseId = Date.now();
+        setExpenses([ 
             ...expenses,
-            expenseDescription, 
+            { expenseDescription, 
             expenseAmount,
-            expenseDate 
+            expenseDate,
+            expenseId
         }]);
         setExpenseDescription("");
         setExpenseAmount("");
         setExpenseDate("");
+        setErrors({ description: "", amount: "", date: ""});
              
     }
 
      
    
-     
+       
 
     return (
         <div>
@@ -57,8 +92,13 @@ const Expense = () => {
              expenseDate={expenseDate}
              updateExpenseDate={updateExpenseDate}
              handleFormSubmit={handleFormSubmit}
+             errors={errors}
+             setErrors={setErrors}
          />
-          <ExpenseList  expenses={expenses} />
+          <ExpenseList  
+             expenses={expenses}
+
+         />
         </div>
     );
 };
