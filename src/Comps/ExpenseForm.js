@@ -1,12 +1,16 @@
 
 
 const ExpenseForm = ({ 
+    expenseTitle,
+    updateExpenseTitle,
     expenseDescription, 
     updateExpenseDescription,
     expenseAmount, 
     updateExpenseAmount, 
     expenseDate,
     updateExpenseDate,
+    expenseCategory,
+    updateExpenseCategory,
     handleFormSubmit,
     errors
      
@@ -14,6 +18,13 @@ const ExpenseForm = ({
     return (
         <div>
          <form onSubmit={handleFormSubmit}>
+            <input 
+              style={{ cursor: "pointer"}}
+              value={expenseTitle}
+              onChange={event => updateExpenseTitle(event.target.value)}
+              placeholder="Enter Title"
+           /> 
+           {errors.title && <p style={{ color: "red"}}>{errors.title}</p>}
            <textarea 
              style={{ cursor: "pointer"}}
              value={expenseDescription}
@@ -35,6 +46,14 @@ const ExpenseForm = ({
              onChange={event => updateExpenseDate(event.target.value)}
           />
            {errors.date && <p style={{ color: "red"}}>{errors.date}</p>} 
+           <input
+             style={{ cursor: "pointer"}} 
+             type="text"
+             value={expenseCategory}
+             onChange={event => updateExpenseCategory(event.target.value)}
+             placeholder="Enter Category"
+          />
+           {errors.category && <p style={{ color: "red" }}>{errors.category}</p>}
           <button 
              style={{ cursor: "pointer"}}
              type="submit"

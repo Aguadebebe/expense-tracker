@@ -1,10 +1,13 @@
+import ExpenseItem from "./ExpenseItem";
 
-
-const ExpenseList = () => {
+const ExpenseList = ({ expenses, onDelete }) => {
     return (
-        <div>
-        ExpenseList (child 5)
-        </div>
+        <ul>
+        { expenses.map(expense => (
+            <ExpenseItem key={expense.id} expense={expense} onDelete={onDelete} />
+            
+          )) }
+        </ul>
     );
 };
 

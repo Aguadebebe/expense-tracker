@@ -15,3 +15,13 @@ body {
   font-size: 1.2em;
   margin-top: 10vh;
 }
+
+.expense-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
+  color: red;
+  border: 1px solid black;
+}
