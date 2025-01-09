@@ -1,6 +1,7 @@
 import Filter from "./Filter";
 import ExpenseForm from './ExpenseForm';
 import ExpenseList from './ExpenseList';
+import ExpenseSummary from "./ExpenseSummary";
 import { useState } from "react";
 
  
@@ -14,6 +15,7 @@ const Expense = () => {
     const [ expenseAmount, setExpenseAmount ] = useState("");
     const [ expenseDate, setExpenseDate ] = useState("");
     const [ expenseCategory, setExpenseCategory ] = useState("");
+    const [ selectedCategory, setSelectedCategory ] = useState("");
     const [ errors, setErrors ] = useState({
         title: "",
         description: "",
@@ -21,7 +23,19 @@ const Expense = () => {
         date: "",
         category: ""
         });
-    /*onDelete is a filter function that deletes and ExpenseItem from the expenses array if called*/ 
+    
+    /**Filter Functions*/
+  
+ const validCategories = [ "Bill", "Auto Parts", "Groceries" ];
+    
+ function sortByCategory(selectedCategory) {
+    setSelectedCategory(selectedCategory);
+ }
+
+    /**Filter Functions*/
+
+       
+        /*onDelete is a filter function that deletes and ExpenseItem from the expenses array if called*/ 
     const onDelete = (id) => {
         setExpenses(expenses.filter(expense => expense.id !== id));
           
@@ -78,7 +92,7 @@ const Expense = () => {
                setErrors(newErrors); 
                return;
          }
-        /**expenseId uses Date.now to create a newj timestamp as an id for the individual expenseItem in the expenses array*/
+        /**expenseId uses Date.now to create a new timestamp as an id for the individual expenseItem in the expenses array*/
         let expenseId = Date.now();
         /** setExpenses is adding first all the previous or current expenses with the spread operator. Then a new expense object is being appended with key prop values for reference*/
         setExpenses([ 
@@ -108,8 +122,7 @@ const Expense = () => {
         <div>
           <p>Expense (child 2)</p>
           <p>Wrapper for expense-related components</p>
-          <Filter />
-          <ExpenseForm
+         <ExpenseForm
              expenseTitle={expenseTitle}
              updateExpenseTitle={updateExpenseTitle}
              expenseDescription={expenseDescription}
@@ -128,8 +141,20 @@ const Expense = () => {
              expenses={expenses}
              onDelete={onDelete}
         />
+        <ExpenseSummary 
+             expenses={expenses}
+             onDelete={onDelete}
+        />
+        <Filter 
+            expenses={expenses}
+            selectedCategory={selectedCategory}
+            sortByCategory={sortByCategory}
+            validCategories={validCategories}
+        />
         </div>
     );
 };
 
 export default Expense;
+
+ 

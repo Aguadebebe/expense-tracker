@@ -5,11 +5,12 @@ const ExpenseItem = ({ expense, onDelete }) => {
    
     return (
          
-         
+        /**These <span> tags make it so a specific prop of the expense object can be singled out and*/ 
         <li className="expense-item">
-         {expense.title + " = "}
-         {expense.description + " "} 
-         {expense.amount + "$ "}
+         
+         <span style={{ color: "green" }}> {expense.title + " = "} </span>
+         {expense.description + ""} 
+         <span style={{ color: "red" }}>{expense.amount + "$ "}</span>
          {expense.date}
          
          <button onClick={() => onDelete(expense.id)}>Delete</button>

@@ -6,6 +6,7 @@ body {
 
 .App-container {
   background-color:bisque;
+  height: 80vh;
   border: 2px solid black;
   display: flex;
   flex-direction: column;
@@ -18,10 +19,9 @@ body {
 
 .expense-item {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   font-size: 1.2em;
-  color: red;
   border: 1px solid black;
 }
