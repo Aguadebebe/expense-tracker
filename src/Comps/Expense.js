@@ -32,7 +32,7 @@ const Expense = () => {
     };
  }, {});  
   
- const validCategories = [ "Bill", "Auto Parts", "Groceries" ];
+ const validCategories = [ "Bills", "Auto Parts", "Groceries" ];
     
  function sortByCategory(selectedCategory) {
     setSelectedCategory(selectedCategory);

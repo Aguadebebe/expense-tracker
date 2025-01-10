@@ -1,7 +1,7 @@
 
 const Filter = ({ selectedCategory, sortByCategory, validCategories, groupedExpenses }) => {
     return (
-        <div>
+        <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center" }}>
             <form>
                 <div value={selectedCategory}
                     onChange={event => sortByCategory(event.target.value)}
@@ -10,7 +10,8 @@ const Filter = ({ selectedCategory, sortByCategory, validCategories, groupedExpe
                 </div>
             </form>
             <div>
-                <h2>Filter by Category</h2>
+                <h2 style={{ marginBottom: "10em" }}>Filter by Category</h2>
+                <h3>The next step is to figure out how to add the categories totals</h3>
             </div>
             
             <ul>
@@ -33,6 +34,8 @@ const Filter = ({ selectedCategory, sortByCategory, validCategories, groupedExpe
                              {/**<span style={{ color: "gray", fontSize: "1.3em" }}>{expense.category}</span>*/}
                              - <span style={{ color: "purple" }}>{expense.title}</span> - 
                              <span style={{ color: "red" }}>${expense.amount}</span>
+                             {/**<span style={{ color: "black", marginLeft: ".2em" }}>{expense.date}</span>*/}
+
                         </li>
                     ))}
                 </ul>
