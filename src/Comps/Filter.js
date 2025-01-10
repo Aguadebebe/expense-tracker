@@ -1,4 +1,5 @@
-const Filter = ({ expenses, selectedCategory, sortByCategory, validCategories  }) => {
+
+const Filter = ({ selectedCategory, sortByCategory, validCategories, groupedExpenses }) => {
     return (
         <div>
             <form>
@@ -11,45 +12,62 @@ const Filter = ({ expenses, selectedCategory, sortByCategory, validCategories  }
             <div>
                 <h2>Filter by Category</h2>
             </div>
+            
             <ul>
-                {expenses
-                    .filter((expense) => {
-                        // Filter based on selectedCategory and validCategories
-                        if (selectedCategory) {
-                            return expense.category === selectedCategory && validCategories.includes(expense.category);
-                        } else {
-                            // If no category is selected, filter only those that exist in validCategories
-                            return validCategories.includes(expense.category);
-                        }
-                    })
-                    .map((expense) => (
+    {Object.keys(groupedExpenses)
+        .filter((category) => {
+            // Filter categories based on selectedCategory and validCategories
+            if (selectedCategory) {
+                return category === selectedCategory && validCategories.includes(category);
+            } else {
+                // If no category is selected, filter only those that exist in validCategories
+                return validCategories.includes(category);
+            }
+        })
+        .map((category) => (
+            <div key={category}>
+                <h3>{category}</h3>
+                <ul>
+                    {groupedExpenses[category].map((expense) => (
                         <li key={expense.id}>
-                            {expense.title} - {expense.category} - ${expense.amount}
+                             {/**<span style={{ color: "gray", fontSize: "1.3em" }}>{expense.category}</span>*/}
+                             - <span style={{ color: "purple" }}>{expense.title}</span> - 
+                             <span style={{ color: "red" }}>${expense.amount}</span>
                         </li>
-                    ))
-
-                     }
-                      
-            </ul>
+                    ))}
+                </ul>
+            </div>
+        ))
+    }
+</ul>
+          
         </div>
     );
 };
 
 export default Filter;
 
-/**<button style={{ cursor: "pointer"}}
-              type="submit"
-             >
-              Add Expense
-             </button>*/
 
-             /**<option value="">Select a category</option>
-            {validCategories.map((category) => (
-                <option key={category} value={category}>{category}</option>
-            ))}*/
-            /**<select 
-              value={selectedCategory}
-              onChange={event => sortByCategory(event.target.value)}
-           >
-            
-           </select>*/
+              
+ /**<ul>
+                {groupedExpenses
+                    .filter((groupedExpense) => {
+                        // Filter based on selectedCategory and validCategories
+                        if (selectedCategory) {
+                            return groupedExpense.category === selectedCategory && validCategories.includes(groupedExpense.category);
+                        } else {
+                            // If no category is selected, filter only those that exist in validCategories
+                            return validCategories.includes(groupedExpense.category);
+                        }
+                    })
+                    Object.keys(groupedExpenses).map((groupedExpense) => (
+                        <li key={groupedExpense.id}>
+                             <span style={{ color: "gray", fontSize: "1.3em" }}>{groupedExpense.category}</span> 
+                             - {groupedExpense.title} - 
+                             <span style={{ color: "red" }}>${groupedExpense.amount}</span>
+                        </li>
+                    ))
+
+                     }
+                      
+                    </ul>*/

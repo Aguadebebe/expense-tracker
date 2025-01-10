@@ -25,6 +25,12 @@ const Expense = () => {
         });
     
     /**Filter Functions*/
+ const groupedExpenses = expenses.reduce((acc, expense) => {
+    return {
+     ...acc,
+     [expense.category]: [...(acc[expense.category] || []), expense],
+    };
+ }, {});  
   
  const validCategories = [ "Bill", "Auto Parts", "Groceries" ];
     
@@ -146,10 +152,10 @@ const Expense = () => {
              onDelete={onDelete}
         />
         <Filter 
-            expenses={expenses}
             selectedCategory={selectedCategory}
             sortByCategory={sortByCategory}
             validCategories={validCategories}
+            groupedExpenses={groupedExpenses}
         />
         </div>
     );
