@@ -70,13 +70,10 @@ const Expense = () => {
      /**handleFormSubmit is the Submit function that Submits form data as an ExpenseItem and adds it to the expense array*/
     function handleFormSubmit(event) {
         event.preventDefault();
-         /**newErrors is an object that checkes all the form elements for submission errors*/
-         let newErrors = { title: "", description: "", amount: "", date: "", category: "" };
-
-         if ( expenseCategory === "" ) {
-            newErrors.category = "PLEASE ENTER A CATEGORY";
-         }
          
+        /**newErrors is an object that checkes all the form elements for submission errors*/
+         let newErrors = { title: "", description: "", amount: "", date: "", category: "" };
+ 
          if ( expenseTitle === "" ) {
             newErrors.title = "PLEASE ENTER A TITLE";
          }
