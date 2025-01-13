@@ -1,4 +1,4 @@
-
+ 
 
 const ExpenseForm = ({ 
     expenseTitle,
@@ -77,15 +77,4 @@ const ExpenseForm = ({
 export default ExpenseForm;
 
 
-/**<input
-style={{ cursor: "pointer"}} 
-type="text"
-value={expenseCategory}
-onChange={event => updateExpenseCategory(event.target.value)}
-placeholder="Enter Category"
-/>*/
-
-/**<option value="">Select a category</option>
-            {expenses.map(expense  => (
-                <option key={expense.id} value={expense.category}>{expense.category}</option>
-            ))} */
+ 
