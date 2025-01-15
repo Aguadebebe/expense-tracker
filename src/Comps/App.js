@@ -1,6 +1,5 @@
 import Header from "./Header";
-import Expense from './Expense';
-import ExpenseSummary from "./ExpenseSummary";
+import Expense from "./Expense";
 import "../Styles/App.css";
  
 
@@ -12,7 +11,6 @@ function App() {
       App-Parent
      <Header />
      <Expense />
-     <ExpenseSummary />
     </div>
   );
 }

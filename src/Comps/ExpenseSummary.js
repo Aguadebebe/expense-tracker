@@ -17,7 +17,6 @@ const ExpenseSummary = ({ expenses = [] }) => {
                 <>
                 <p>Total Expense Count: {expenseCount}</p>
                 <p>Total Expense Amount: ${roundAmount}</p>
-
                 </>
             )}
           </div>

@@ -9,9 +9,9 @@ const ExpenseItem = ({ expense, onDelete }) => {
         <li className="expense-item">
          
          <span style={{ color: "green" }}> {expense.title + " = "} </span>
-         {expense.description} 
+           {expense.description} 
          <span style={{ color: "red" }}>{"$" + expense.amount }</span>
-         {expense.date}
+           {expense.date}
          
          <button onClick={() => onDelete(expense.id)}>Delete</button>
         </li>

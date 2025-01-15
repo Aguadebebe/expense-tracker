@@ -48,8 +48,8 @@
                                         const amount = parseFloat(expense.amount); // Convert to number for each expense
                                         return (
                                             <li key={expense.id}>
-                                                - <span style={{ color: "purple" }}>{expense.title}</span> - 
-                                                <span style={{ color: "gray" }}>${isNaN(amount) ? "0.00" : amount.toFixed(2)}</span>
+                                                - <span style={{ color: "gray" }}>{expense.title}</span> - 
+                                                <span style={{ color: "purple" }}>${isNaN(amount) ? "0.00" : amount.toFixed(2)}</span>
                                             </li>
                                         );
                                     })}
