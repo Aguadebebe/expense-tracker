@@ -12,7 +12,8 @@ const ExpenseForm = ({
     expenseCategory,
     updateExpenseCategory,
     handleFormSubmit,
-    errors
+    errors,
+    setErrors
      
 }) => {
     return (
@@ -23,7 +24,13 @@ const ExpenseForm = ({
             <input 
               style={{ cursor: "pointer"}}
               value={expenseTitle}
-              onChange={event => updateExpenseTitle(event.target.value)}
+              //onChange={event => updateExpenseTitle(event.target.value)}
+              onChange={event => {
+                updateExpenseTitle(event.target.value);
+                if (errors.title) {
+                    setErrors(prevErrors => ({ ...prevErrors, title: "" }));
+                }
+            }}
               placeholder="Enter Title"
            /> 
            
@@ -32,7 +39,13 @@ const ExpenseForm = ({
              className="expense-description"
              style={{ cursor: "pointer"}}
              value={expenseDescription}
-             onChange={event => updateExpenseDescription(event.target.value)}
+             //onChange={event => updateExpenseDescription(event.target.value)}
+             onChange={event => {
+              updateExpenseDescription(event.target.value);
+              if (errors.description) {
+                  setErrors(prevErrors => ({ ...prevErrors, description: "" }));
+              }
+          }}
              placeholder="Enter Expense Description"
            /> 
             
@@ -41,7 +54,13 @@ const ExpenseForm = ({
              className="enter-amount"
              style={{ cursor: "pointer"}} 
              value={expenseAmount}
-             onChange={event => updateExpenseAmount(event.target.value)}
+             //onChange={event => updateExpenseAmount(event.target.value)}
+             onChange={event => {
+              updateExpenseAmount(event.target.value);
+              if (errors.amount) {
+                  setErrors(prevErrors => ({ ...prevErrors, amount: "" }));
+              }
+          }}
              placeholder="Enter Amount $"
           />
            
@@ -51,7 +70,13 @@ const ExpenseForm = ({
              style={{ cursor: "pointer"}} 
              type="date"
              value={expenseDate}
-             onChange={event => updateExpenseDate(event.target.value)}
+             //onChange={event => updateExpenseDate(event.target.value)}
+             onChange={event => {
+              updateExpenseDate(event.target.value);
+              if (errors.date) {
+                  setErrors(prevErrors => ({ ...prevErrors, date: "" }));
+              }
+          }} 
           />
            {errors.date && <p style={{ color: "red"}}>{errors.date}</p>} 
            

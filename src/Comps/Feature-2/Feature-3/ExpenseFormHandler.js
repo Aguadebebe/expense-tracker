@@ -18,6 +18,8 @@
  
      const handleFormSubmit = (event) => {
          event.preventDefault();
+         setErrors(event.target.value);
+         
  
          let newErrors = { title: "", description: "", amount: "", date: "", category: "" };
  
@@ -25,10 +27,9 @@
          if (expenseDescription.trim() === "") newErrors.description = "PLEASE ENTER A DESCRIPTION";
          if (expenseAmount.trim() === "" || isNaN(expenseAmount)) newErrors.amount = "PLEASE ENTER A NUMBER";
          if (expenseDate.trim() === "") newErrors.date = "PLEASE ENTER A DATE";
- 
          if (Object.values(newErrors).some((error) => error !== "")) {
              setErrors(newErrors);
-             return;
+            return;
          }
  
          const newExpense = {
@@ -65,6 +66,7 @@
              updateExpenseCategory={setExpenseCategory}
              handleFormSubmit={handleFormSubmit}
              errors={errors}
+             setErrors={setErrors}
          />
      );
  };
