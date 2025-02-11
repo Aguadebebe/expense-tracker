@@ -1,5 +1,5 @@
-import Header from "./Header";
-import Expense from "./Expense";
+import Header from "./Feature-1/Header";
+import Expense from "./Feature-2/Expense";
 import "../Styles/App.css";
  
 

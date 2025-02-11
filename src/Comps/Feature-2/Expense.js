@@ -1,7 +1,7 @@
 import Filter from "./Filter";
-import ExpenseList from './ExpenseList';
+import ExpenseList from './Feature4/ExpenseList';
 import ExpenseSummary from "./ExpenseSummary";
-import ExpenseFormHandler from './ExpenseFormHandler';
+import ExpenseFormHandler from './Feature-3/ExpenseFormHandler';
 import { useState } from "react";
 
 const Expense = () => {

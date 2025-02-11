@@ -2,7 +2,7 @@
  import ExpenseForm from './ExpenseForm';
  import { useState } from 'react';
  
- const ExpenseFormHandler = ({ onAddExpense }) => {
+ const ExpenseFormHandler = ({ onAddExpense }, text) => {
      const [expenseTitle, setExpenseTitle] = useState("");
      const [expenseDescription, setExpenseDescription] = useState("");
      const [expenseAmount, setExpenseAmount] = useState("");
@@ -21,10 +21,10 @@
  
          let newErrors = { title: "", description: "", amount: "", date: "", category: "" };
  
-         if (expenseTitle === "") newErrors.title = "PLEASE ENTER A TITLE";
-         if (expenseDescription === "") newErrors.description = "PLEASE ENTER A DESCRIPTION";
-         if (expenseAmount === "" || isNaN(expenseAmount)) newErrors.amount = "PLEASE ENTER A NUMBER";
-         if (expenseDate === "") newErrors.date = "PLEASE ENTER A DATE";
+         if (expenseTitle.trim() === "") newErrors.title = "PLEASE ENTER A TITLE";
+         if (expenseDescription.trim() === "") newErrors.description = "PLEASE ENTER A DESCRIPTION";
+         if (expenseAmount.trim() === "" || isNaN(expenseAmount)) newErrors.amount = "PLEASE ENTER A NUMBER";
+         if (expenseDate.trim() === "") newErrors.date = "PLEASE ENTER A DATE";
  
          if (Object.values(newErrors).some((error) => error !== "")) {
              setErrors(newErrors);

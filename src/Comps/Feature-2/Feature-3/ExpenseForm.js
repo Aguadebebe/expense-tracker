@@ -17,7 +17,9 @@ const ExpenseForm = ({
 }) => {
     return (
         <div>
-         <form onSubmit={handleFormSubmit}>
+         <form 
+         className="form"
+         onSubmit={handleFormSubmit}>
             <input 
               style={{ cursor: "pointer"}}
               value={expenseTitle}
@@ -27,6 +29,7 @@ const ExpenseForm = ({
            
            {errors.title && <p style={{ color: "red"}}>{errors.title}</p>}
            <textarea 
+             className="expense-description"
              style={{ cursor: "pointer"}}
              value={expenseDescription}
              onChange={event => updateExpenseDescription(event.target.value)}
@@ -35,6 +38,7 @@ const ExpenseForm = ({
             
            {errors.description && <p style={{ color: "red"}}>{errors.description}</p>}
            <input
+             className="enter-amount"
              style={{ cursor: "pointer"}} 
              value={expenseAmount}
              onChange={event => updateExpenseAmount(event.target.value)}
@@ -43,6 +47,7 @@ const ExpenseForm = ({
            
           {errors.amount && <p style={{ color: "red"}}>{errors.amount}</p>}
            <input
+             className="mm"
              style={{ cursor: "pointer"}} 
              type="date"
              value={expenseDate}
@@ -51,7 +56,8 @@ const ExpenseForm = ({
            {errors.date && <p style={{ color: "red"}}>{errors.date}</p>} 
            
             
-           <select 
+           <select
+           className="category" 
            value={expenseCategory}
            onChange={event => updateExpenseCategory(event.target.value)}
            > 
@@ -63,6 +69,7 @@ const ExpenseForm = ({
            
           {errors.category && <p style={{ color: "red" }}>{errors.category}</p>}
           <button 
+             className="submit"
              style={{ cursor: "pointer"}}
              type="submit"
           >

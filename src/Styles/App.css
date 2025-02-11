@@ -25,3 +25,30 @@ body {
   font-size: 1.2em;
   border: 1px solid black;
 }
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.expense-description {
+  margin-top: 1em;
+}
+
+.enter-amount {
+  margin-top: 1em;
+}
+
+.mm {
+  margin-top: 1em;
+}
+
+.category {
+  margin-top: 1em;
+}
+
+.submit {
+  margin-top: 1em;
+}
