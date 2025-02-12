@@ -1,24 +1,17 @@
-import Filter from "./Filter";
-import ExpenseList from './Feature-4/ExpenseList';
+import { SortedExpenseCategories } from "../Feature-SortedCategory/SortedExpenseCategories";
+import ExpenseList from '../Feature-List/ExpenseList';
 import ExpenseSummary from "./ExpenseSummary";
-import ExpenseFormHandler from './Feature-3/ExpenseFormHandler';
+import ExpenseFormHandler from '../Feature-Form/ExpenseFormHandler';
 import { useState } from "react";
 
 const Expense = () => {
     const [expenses, setExpenses] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState("");
 
-    const validCategories = ["Bills", "Auto Parts", "Groceries"];
-
-    const groupedExpenses = expenses.reduce((acc, expense) => {
-        return {
-            ...acc,
-            [expense.category]: [...(acc[expense.category] || []), expense],
-        };
-    }, {});
-
     const onAddExpense = (newExpense) => {
         setExpenses([...expenses, newExpense]);
+        console.log([...expenses]);
+        console.log([...expenses, newExpense]);
     };
 
     const onDelete = (id) => {
@@ -44,11 +37,10 @@ const Expense = () => {
                 expenses={expenses}
                 onDelete={onDelete}
             />
-            <Filter
-                selectedCategory={selectedCategory}
+            <SortedExpenseCategories
                 sortByCategory={sortByCategory}
-                validCategories={validCategories}
-                groupedExpenses={groupedExpenses}
+                expenses={expenses}
+                selectedCategory={selectedCategory}
             />
         </div>
     );

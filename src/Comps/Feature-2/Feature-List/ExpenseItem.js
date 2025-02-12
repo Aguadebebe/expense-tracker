@@ -1,7 +1,7 @@
  
 
 const ExpenseItem = ({ expense, onDelete }) => {
- console.log(expense);
+  
    
     return (
            

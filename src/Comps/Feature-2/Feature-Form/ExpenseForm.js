@@ -30,7 +30,7 @@ const ExpenseForm = ({
                 if (errors.title) {
                     setErrors(prevErrors => ({ ...prevErrors, title: "" }));
                 }
-            }}
+              }}
               placeholder="Enter Title"
            /> 
            
@@ -39,7 +39,6 @@ const ExpenseForm = ({
              className="expense-description"
              style={{ cursor: "pointer"}}
              value={expenseDescription}
-             //onChange={event => updateExpenseDescription(event.target.value)}
              onChange={event => {
               updateExpenseDescription(event.target.value);
               if (errors.description) {
@@ -54,7 +53,6 @@ const ExpenseForm = ({
              className="enter-amount"
              style={{ cursor: "pointer"}} 
              value={expenseAmount}
-             //onChange={event => updateExpenseAmount(event.target.value)}
              onChange={event => {
               updateExpenseAmount(event.target.value);
               if (errors.amount) {
@@ -70,7 +68,6 @@ const ExpenseForm = ({
              style={{ cursor: "pointer"}} 
              type="date"
              value={expenseDate}
-             //onChange={event => updateExpenseDate(event.target.value)}
              onChange={event => {
               updateExpenseDate(event.target.value);
               if (errors.date) {
@@ -90,7 +87,7 @@ const ExpenseForm = ({
              <option>Bills</option>
              <option>Auto Parts</option>
              <option>Groceries</option>
-          </select>
+           </select>
            
           {errors.category && <p style={{ color: "red" }}>{errors.category}</p>}
           <button 
@@ -98,7 +95,7 @@ const ExpenseForm = ({
              style={{ cursor: "pointer"}}
              type="submit"
           >
-            Submit
+            Add Expense
           </button> 
             
          </form>
