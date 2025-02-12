@@ -1,0 +1,28 @@
+
+
+.expense-li-title {
+    color: gray;
+}
+
+.expense-li-amount {
+    color: purple;
+}
+
+.strong-category {
+    color: teal;
+}
+
+.strong-cat-total {
+    color: red;
+}
+
+.filter-flexbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.filter-category-border {
+    border: 2px solid black;
+}

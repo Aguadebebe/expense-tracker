@@ -6,7 +6,8 @@ import { useState } from "react";
 
 const Expense = () => {
     const [expenses, setExpenses] = useState([]);
-    const [selectedCategory, setSelectedCategory] = useState("");
+
+    const selectedCategory = "";
 
     const onAddExpense = (newExpense) => {
         setExpenses([...expenses, newExpense]);
@@ -18,17 +19,11 @@ const Expense = () => {
         setExpenses(expenses.filter(expense => expense.id !== id));
     };
 
-    function sortByCategory(selectedCategory) {
-        setSelectedCategory(selectedCategory);
-    }
-
     return (
         <div>
-            <p>Expense (child 2)</p>
-            <p>Wrapper for expense-related components</p>
-
+            <h2>Expense Form -</h2>
+           
             <ExpenseFormHandler onAddExpense={onAddExpense} />
-
             <ExpenseList
                 expenses={expenses}
                 onDelete={onDelete}
@@ -38,7 +33,6 @@ const Expense = () => {
                 onDelete={onDelete}
             />
             <SortedExpenseCategories
-                sortByCategory={sortByCategory}
                 expenses={expenses}
                 selectedCategory={selectedCategory}
             />

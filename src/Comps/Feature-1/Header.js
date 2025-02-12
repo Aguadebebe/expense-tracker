@@ -2,9 +2,9 @@
 
 const Header = () => {
     return (
-        <div>
-        Header (child 1)
-        </div>
+        <header>
+          <h1>General Ledger App</h1>
+        </header>
     );
 };
 

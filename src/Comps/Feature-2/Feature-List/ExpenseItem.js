@@ -1,4 +1,4 @@
- 
+import "./ExpenseItem.css";
 
 const ExpenseItem = ({ expense, onDelete }) => {
   
@@ -7,9 +7,9 @@ const ExpenseItem = ({ expense, onDelete }) => {
            
         <li className="expense-item">
          
-          <span style={{ color: "green" }}> {expense.title + " = "} </span>
+          <span className="expense-title"> {expense.title + " = "} </span>
            {expense.description} 
-          <span style={{ color: "red" }}>{"$" + expense.amount }</span>
+          <span className="expense-amount">{"$" + expense.amount }</span>
            {expense.date}
          
           <button onClick={() => onDelete(expense.id)}>Delete</button>
