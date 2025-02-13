@@ -37,10 +37,11 @@
              description: expenseDescription,
              amount: parseFloat(expenseAmount),
              date: expenseDate,
-             id: Date.now(),
+             //id: Date.now(),
+               id: new Date().toLocaleString(),
              category: expenseCategory,
          };
- 
+ console.log(newExpense.id);
          onAddExpense(newExpense);
  
          // Reset form state

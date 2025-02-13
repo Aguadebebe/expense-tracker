@@ -21,7 +21,7 @@ const Expense = () => {
 
     return (
         <div>
-            <h2>Expense Form -</h2>
+             
            
             <ExpenseFormHandler onAddExpense={onAddExpense} />
             <ExpenseList
