@@ -10,15 +10,15 @@ const ExpenseSummary = ({ expenses = [] }) => {
     const groupExpenses = expenses.reduce((acc, expense, index) => {
        const amount = parseFloat(expense.amount) || 0; // Convert to number and handle invalid values
        
-       console.log(`Index = ${index + 1}: Adding Amount = ${amount} to acc = ${acc}`);
+       console.log(`Index = ${index + 1}: Adding Amount = ${amount} + acc = ${acc}`);
       
     return acc + amount;
     }, 0);
        
        console.log(`groupExpenses: = ${groupExpenses}`);
     
-       const roundAmount = groupExpenses.toFixed(2);
-       console.log(`roundAmount: = ${roundAmount}`);
+       const roundedTotalExpenseAmount = groupExpenses.toFixed(2);
+       console.log(`roundAmount: = ${roundedTotalExpenseAmount}`);
 
     return (
 
@@ -28,7 +28,7 @@ const ExpenseSummary = ({ expenses = [] }) => {
             {expenseCount > 0 && (
                 <div>
                   <p>Total Expense Count: {expenseCount}</p>
-                  <p>Total Expense Amount: ${roundAmount}</p>
+                  <p>Total Expense Amount: ${roundedTotalExpenseAmount}</p>
                 </div>
             )}
         </div>

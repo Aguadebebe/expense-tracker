@@ -7,9 +7,9 @@ import App from './Comps/App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <div>
     <App />
-  </React.StrictMode>
+  </div>
 );
 
  

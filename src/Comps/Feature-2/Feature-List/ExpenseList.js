@@ -1,6 +1,6 @@
 import ExpenseItem from "./ExpenseItem";
 
-const ExpenseList = ({ expenses, onDelete }) => {
+const ExpenseList = ({ expenses, setExpenses,  onDelete }) => {
     return (
       <>
         <h2>Expense Item List -</h2>

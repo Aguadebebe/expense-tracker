@@ -1,14 +1,17 @@
+import { useState } from "react";
 import { SortedExpenseCategories } from "./SortedExpenseCategories";
+import { StoredExpenses } from "./StoredExpenses";
 import ExpenseList from '../Feature-List/ExpenseList';
 import ExpenseSummary from "./ExpenseSummary";
 import ExpenseFormHandler from '../Feature-Form/ExpenseFormHandler';
-import { useState } from "react";
+ 
 
 const Expense = () => {
+// State 
     const [expenses, setExpenses] = useState([]);
 
     const selectedCategory = "";
-
+// Event Handlers   
     const onAddExpense = (newExpense) => {
         setExpenses([...expenses, newExpense]);
         console.log([...expenses]);
@@ -26,6 +29,7 @@ const Expense = () => {
             <ExpenseFormHandler onAddExpense={onAddExpense} />
             <ExpenseList
                 expenses={expenses}
+                setExpenses={setExpenses}
                 onDelete={onDelete}
             />
             <ExpenseSummary
@@ -35,6 +39,10 @@ const Expense = () => {
             <SortedExpenseCategories
                 expenses={expenses}
                 selectedCategory={selectedCategory}
+            />
+            <StoredExpenses 
+            expenses={expenses} 
+            setExpenses={setExpenses} 
             />
         </div>
     );
