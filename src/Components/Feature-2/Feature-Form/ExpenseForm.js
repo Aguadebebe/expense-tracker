@@ -1,6 +1,10 @@
 import "./ExpenseForm.css";
-
+import { useEffect } from "react";
 const ExpenseForm = (props) => {
+  useEffect(() => {
+    console.log("Expense Category updated:", props.expenseCategory);
+  }, [props.expenseCategory]); // Logs whenever `expenseCategory` is updated
+
   return (
     <div className="form-border">
       <form className="form" onSubmit={props.handleFormSubmit}>
@@ -57,19 +61,27 @@ const ExpenseForm = (props) => {
             }}
           />
           {props.errors.date && <p className="errors">{props.errors.date}</p>}
-
+          {console.log(props.expenseCategory)}
           <select
             className="category"
             value={props.expenseCategory}
-            onChange={(event) => props.updateExpenseCategory(event.target.value)}
+            onChange={(event) => {
+              props.updateExpenseCategory(event.target.value);
+              // Clear error if valid category selected
+              if (props.errors.category) {
+                props.setErrors((prevErrors) => ({ ...prevErrors, category: null }));
+              }
+            }}
           >
             <option>Select a Category</option>
             <option>Bills</option>
             <option>Auto Parts</option>
             <option>Groceries</option>
           </select>
+          {console.log(props.expenseCategory)}
 
           {props.errors.category && <p className="errors">{props.errors.category}</p>}
+
           <button className="add-expense-btn" type="submit">
             Add Expense
           </button>

@@ -1,32 +1,23 @@
-
-
 body {
-  background-color:rgb(221, 221, 100);
+  background-color: rgb(221, 221, 100);
+}
+/* Main Layout - Flexbox container */
+.App-container {
+  display: flex;
+  flex-direction: row; /* Side-by-side layout */
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  background-color: bisque;
+  border: 2px solid black;
 }
 
-.App-container {
-  background-color:bisque;
-  height: 80vh;
-  border: 2px solid black;
+/* MainContent.css */
+.main-content {
+  flex: 4; /* Main content takes up 4x the space of sidebar */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-style: oblique;
-  font-size: 1.2em;
-  margin-top: 10vh;
+  padding: 2vh;
+  background-color: lightgray;
 }
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 

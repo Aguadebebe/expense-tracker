@@ -1,0 +1,28 @@
+/* Form */
+.form-border {
+  border: 2px solid black;
+  padding: 1vh;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1vh; /* Replaces margin-top on inputs */
+  width: 80%;
+  max-width: 400px; /* Prevents stretching */
+}
+
+.errors {
+  color: red;
+}
+
+.add-expense-btn,
+.input-title,
+.expense-description,
+.enter-amount,
+.input-date,
+.category {
+  cursor: pointer;
+}

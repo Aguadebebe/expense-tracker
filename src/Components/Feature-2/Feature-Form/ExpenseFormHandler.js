@@ -6,7 +6,7 @@ const ExpenseFormHandler = ({ onAddExpense }, text) => {
   const [expenseDescription, setExpenseDescription] = useState("");
   const [expenseAmount, setExpenseAmount] = useState("");
   const [expenseDate, setExpenseDate] = useState("");
-  const [expenseCategory, setExpenseCategory] = useState("");
+  const [expenseCategory, setExpenseCategory] = useState("Select a Category");
   const [errors, setErrors] = useState({
     title: "",
     description: "",
@@ -25,18 +25,18 @@ const ExpenseFormHandler = ({ onAddExpense }, text) => {
     if (expenseDescription.trim() === "") newErrors.description = "PLEASE ENTER A DESCRIPTION";
     if (expenseAmount.trim() === "" || isNaN(expenseAmount)) newErrors.amount = "PLEASE ENTER A NUMBER";
     if (expenseDate.trim() === "") newErrors.date = "PLEASE ENTER A DATE";
+    if (expenseCategory === "Select a Category") newErrors.category = "PLEASE SELECT A CATEGORY";
     if (Object.values(newErrors).some((error) => error !== "")) {
       setErrors(newErrors);
       return;
     }
-
+    // new Expense object created with the updated values a user adds to the ExpenseForm inputs/select/date.
     const newExpense = {
       title: expenseTitle,
       description: expenseDescription,
       amount: parseFloat(expenseAmount),
       date: expenseDate,
-      //id: Date.now(),
-      id: new Date().toLocaleString(),
+      id: Date.now(), //id: new Date().toLocaleString(),
       category: expenseCategory
     };
     console.log(newExpense.id);
@@ -47,7 +47,7 @@ const ExpenseFormHandler = ({ onAddExpense }, text) => {
     setExpenseDescription("");
     setExpenseAmount("");
     setExpenseDate("");
-    setExpenseCategory("");
+    setExpenseCategory("Select a Category");
     setErrors({ title: "", description: "", amount: "", date: "", category: "" });
   };
 
