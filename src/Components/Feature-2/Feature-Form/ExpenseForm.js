@@ -24,7 +24,7 @@ const ExpenseForm = (props) => {
           {props.errors.title && <p className="errors">{props.errors.title}</p>}
 
           <textarea
-            className="expense-description"
+            className="input-expense-description"
             value={props.expenseDescription}
             onChange={(event) => {
               props.updateExpenseDescription(event.target.value);
@@ -63,7 +63,7 @@ const ExpenseForm = (props) => {
           {props.errors.date && <p className="errors">{props.errors.date}</p>}
           {console.log(props.expenseCategory)}
           <select
-            className="category"
+            className="select-category"
             value={props.expenseCategory}
             onChange={(event) => {
               props.updateExpenseCategory(event.target.value);

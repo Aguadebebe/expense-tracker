@@ -20,9 +20,9 @@
 
 .add-expense-btn,
 .input-title,
-.expense-description,
+.input-expense-description,
 .enter-amount,
 .input-date,
-.category {
+.select-category {
   cursor: pointer;
 }
