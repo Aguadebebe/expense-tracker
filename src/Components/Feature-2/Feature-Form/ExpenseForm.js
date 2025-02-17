@@ -69,7 +69,7 @@ const ExpenseForm = (props) => {
               props.updateExpenseCategory(event.target.value);
               // Clear error if valid category selected
               if (props.errors.category) {
-                props.setErrors((prevErrors) => ({ ...prevErrors, category: null }));
+                props.setErrors((prevErrors) => ({ ...prevErrors, category: null })); //This is set to null so that the error message will clear
               }
             }}
           >
