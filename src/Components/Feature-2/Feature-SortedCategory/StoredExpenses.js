@@ -5,16 +5,14 @@ export const StoredExpenses = ({ expenses, setExpenses }) => {
 
   useEffect(() => {
     if (localStorage.getItem("storedExpensesData")) {
-      console.log("Before parsing:", localStorage.getItem("storedExpensesData")); // Log before JSON.parse
       setExpenses(JSON.parse(localStorage.getItem("storedExpensesData")));
-      console.log("After parsing:", JSON.parse(localStorage.getItem("storedExpensesData")));
     }
   }, [setExpenses]);
 
   // Run every time our expenses state changes
   useEffect(() => {
     const stringifiedExpenses = JSON.stringify(expenses);
-    console.log("Before storing (stringified):", stringifiedExpenses); // Log after JSON.stringify
+
     localStorage.setItem("storedExpensesData", stringifiedExpenses);
   }, [expenses]);
 
@@ -22,3 +20,5 @@ export const StoredExpenses = ({ expenses, setExpenses }) => {
     console.log("Updated expenses state:", expenses);
   }, [expenses]); // Runs every time expenses changes
 };
+
+// this stores expense items to the browsers local storage.

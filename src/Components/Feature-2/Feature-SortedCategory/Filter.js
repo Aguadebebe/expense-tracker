@@ -53,3 +53,5 @@ const Filter = (props) => {
 };
 
 export default Filter;
+
+// this separates and groups expenses together. As well as displaying the amount for each expense and total for that category.

@@ -13,7 +13,7 @@
   transition: max-width 0.3s ease-in-out;
 }
 /* Icon container - Align icons side by side */
-.sidebar-icons {
+.sidebar-icons-container {
   display: flex; /* Aligns icons horizontally */
   justify-content: space-between; /* Distributes space evenly */
   width: 100%; /* Full width of sidebar */

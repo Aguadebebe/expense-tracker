@@ -1,7 +1,7 @@
 import ExpenseForm from "./ExpenseForm";
 import { useState } from "react";
 
-const ExpenseFormHandler = ({ onAddExpense }, text) => {
+const ExpenseFormHandler = ({ expenses, setExpenses }, text) => {
   const [expenseTitle, setExpenseTitle] = useState("");
   const [expenseDescription, setExpenseDescription] = useState("");
   const [expenseAmount, setExpenseAmount] = useState("");
@@ -14,6 +14,12 @@ const ExpenseFormHandler = ({ onAddExpense }, text) => {
     date: "",
     category: ""
   });
+
+  const onAddExpense = (newExpense) => {
+    setExpenses([...expenses, newExpense]);
+    console.log([...expenses]);
+    console.log([...expenses, newExpense]);
+  };
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
@@ -73,3 +79,5 @@ const ExpenseFormHandler = ({ onAddExpense }, text) => {
 };
 
 export default ExpenseFormHandler;
+
+// This holds all the logic, state, update functions and general form logic.

@@ -4,20 +4,13 @@ export const SortedExpenseCategories = ({ expenses, selectedCategory, sortByCate
   const validCategories = ["Bills", "Auto Parts", "Groceries"];
 
   const groupedExpenses = expenses.reduce((acc, expense, index) => {
-    console.log(`Iteration ${index + 1}: Processing expense`, expense);
-    console.log("Accumulator before update:", acc);
-
     const updatedAcc = {
       ...acc,
       [expense.category]: [...(acc[expense.category] || []), expense]
     };
-    console.log("Accumulator after update:", updatedAcc);
-    console.log("------------------------------"); // Just for readability
 
     return updatedAcc;
   }, {});
-
-  console.log("Final grouped expenses:", groupedExpenses);
 
   return (
     <div>
@@ -25,3 +18,5 @@ export const SortedExpenseCategories = ({ expenses, selectedCategory, sortByCate
     </div>
   );
 };
+
+// this holds the validCategories array to dilter the groups of expenses and the reduce logic.

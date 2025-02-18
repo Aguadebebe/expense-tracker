@@ -92,3 +92,5 @@ const ExpenseForm = (props) => {
 };
 
 export default ExpenseForm;
+
+// this displays the form, all the input fields, error messages, in the middle section of the page.

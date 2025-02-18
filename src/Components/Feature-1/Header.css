@@ -2,3 +2,10 @@
   color: white;
   text-shadow: -1.5px -1.5px 0 black, 1.5px -1.5px 0 black, -1.5px 1.5px 0 black, 1.5px 1.5px 0 black; /* Simulates a stroke */
 }
+.header-icon {
+  font-size: 1.5em; /* Adjust size of icons */
+  cursor: pointer; /* Makes icons clickable */
+  transition: transform 0.2s; /* Adds hover effect */
+  margin-right: 85vw;
+  bottom: 29.2vh;
+}
