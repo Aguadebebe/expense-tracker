@@ -1,7 +1,7 @@
 import React from "react";
 import { FaRegTrashCan } from "react-icons/fa6";
 import "./SideBar.css";
-const TrashDelete = () => {
+const TrashDeleteIcon = () => {
   return (
     <div>
       <FaRegTrashCan className="sidebar-icon" />
@@ -9,4 +9,4 @@ const TrashDelete = () => {
   );
 };
 
-export default TrashDelete;
+export default TrashDeleteIcon;

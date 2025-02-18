@@ -6,7 +6,7 @@ const Header = () => {
     <>
       <span className="header-icon-container">
         <RiFolderAddLine className="header-icon" />
-        <h1 className="header-title">Expense Ledger App</h1>
+        <h1 className="header-title">Expense Ledger</h1>
         <TimeStamp />
       </span>
     </>

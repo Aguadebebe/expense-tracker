@@ -22,7 +22,7 @@
 
 /* Icon styling */
 .sidebar-icon {
-  font-size: 1.5em; /* Adjust size of icons */
+  font-size: 2vh; /* Adjust size of icons */
   cursor: pointer; /* Makes icons clickable */
   transition: transform 0.2s; /* Adds hover effect */
 }
