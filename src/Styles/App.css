@@ -19,5 +19,6 @@ body {
   justify-content: center;
   align-items: center;
   padding: 2vh;
+  padding-bottom: 50vh;
   background-color: lightgray;
 }

@@ -1,12 +1,14 @@
 import "./Header.css";
+import TimeStamp from "./TimeStamp";
 import { RiFolderAddLine } from "react-icons/ri";
 const Header = () => {
   return (
     <>
-      <RiFolderAddLine className="header-icon" />
-      <header>
+      <span className="header-icon-container">
+        <RiFolderAddLine className="header-icon" />
         <h1 className="header-title">Expense Ledger App</h1>
-      </header>
+        <TimeStamp />
+      </span>
     </>
   );
 };

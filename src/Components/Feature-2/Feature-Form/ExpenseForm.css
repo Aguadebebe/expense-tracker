@@ -10,7 +10,7 @@
   justify-content: center;
   align-items: center;
   gap: 1vh; /* Replaces margin-top on inputs */
-  width: 80%;
+  width: 60%;
   max-width: 400px; /* Prevents stretching */
 }
 

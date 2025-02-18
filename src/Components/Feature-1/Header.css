@@ -1,11 +1,23 @@
 .header-title {
+  font-size: 3vw;
   color: white;
   text-shadow: -1.5px -1.5px 0 black, 1.5px -1.5px 0 black, -1.5px 1.5px 0 black, 1.5px 1.5px 0 black; /* Simulates a stroke */
 }
+.header-icon-container {
+  display: flex; /* Aligns icons horizontally */
+  justify-content: space-between; /* Distributes space evenly */
+  flex-direction: row;
+  border: 1px solid black;
+  width: 84vw; /* Full width of sidebar */
+  margin-bottom: 6vh; /* Adds spacing below the icons */
+}
+
 .header-icon {
   font-size: 1.5em; /* Adjust size of icons */
   cursor: pointer; /* Makes icons clickable */
   transition: transform 0.2s; /* Adds hover effect */
-  margin-right: 85vw;
-  bottom: 29.2vh;
+}
+
+.header-icon:hover {
+  transform: scale(1.1); /* Slight zoom effect on hover */
 }
