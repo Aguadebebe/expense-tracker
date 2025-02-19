@@ -4,11 +4,15 @@ import { RiFolderAddLine } from "react-icons/ri";
 const Header = () => {
   return (
     <>
-      <span className="header-icon-container">
-        <RiFolderAddLine className="header-icon" />
-        <h1 className="header-title">Expense Ledger</h1>
-        <TimeStamp />
-      </span>
+      <header className="header-section header-bar bg-primary mb-4">
+        <div className="container d-flex flex-column flex-md-row align-items-center p-3">
+          <span className="header-icon-container">
+            <RiFolderAddLine className="header-icon" />
+            <h1 className="header-title my-0 mr-md-auto font-weight-normal">Expense Ledger</h1>
+            <TimeStamp />
+          </span>
+        </div>
+      </header>
     </>
   );
 };
