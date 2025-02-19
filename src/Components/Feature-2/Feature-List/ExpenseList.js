@@ -4,10 +4,10 @@ const ExpenseList = ({ expenses, onDelete }) => {
   return (
     <>
       <h2>Expense Item List -</h2>
-      <div className="item-list-border">
-        <ul>
+      <div className="expense-container border p-3 bg-light">
+        <ul className="list-group overflow-auto">
           {expenses.map((expense) => (
-            <ExpenseItem key={expense.id} expense={expense} onDelete={onDelete} />
+            <ExpenseItem key={expense.id} expense={expense} onDelete={onDelete} className="list-group-item" />
           ))}
         </ul>
       </div>

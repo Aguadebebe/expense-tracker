@@ -1,7 +1,7 @@
 import "./Filter.css";
 const Filter = (props) => {
   return (
-    <div className="filter-flexbox">
+    <div>
       <h2>Filter by Category -</h2>
       <div className="filter-category-border">
         <ul>

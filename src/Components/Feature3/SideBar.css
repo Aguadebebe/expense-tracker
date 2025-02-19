@@ -1,17 +1,12 @@
 /* Sidebar.css */
 .sidebar {
-  flex: 1; /* Sidebar takes up 1 part of the space */
+  /* Sidebar takes up 1 part of the space */
   max-width: 18vw; /* Prevents sidebar from growing too large */
   min-width: 12vw; /* Ensures it doesn't shrink too much */
-  height: 100vh;
-  background-color: white;
   border: 2px solid black;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1vh;
   transition: max-width 0.3s ease-in-out;
 }
+
 /* Icon container - Align icons side by side */
 .sidebar-icons-container {
   display: flex; /* Aligns icons horizontally */

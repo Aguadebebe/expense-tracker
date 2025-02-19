@@ -5,11 +5,11 @@ import "../Styles/App.css";
 
 function App() {
   return (
-    <div className="App-container">
-      <div>
+    <div className="container-fluid d-flex">
+      <div className="sidebar bg-light border-end">
         <SideBar />
       </div>
-      <div className="main-content">
+      <div className=" flex-grow-1">
         <Header />
         <Expense />
       </div>

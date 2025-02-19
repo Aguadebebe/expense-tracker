@@ -4,16 +4,6 @@
   padding: 1vh;
 }
 
-.form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1vh; /* Replaces margin-top on inputs */
-  width: 60%;
-  max-width: 400px; /* Prevents stretching */
-}
-
 .errors {
   color: red;
 }

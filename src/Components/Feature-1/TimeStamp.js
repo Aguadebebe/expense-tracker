@@ -9,7 +9,7 @@ const TimeStamp = () => {
 
     return () => clearInterval(interval);
   }, []);
-  return <p>{currentTime}</p>;
+  return <p style={{ color: "aquamarine" }}>{currentTime}</p>;
 };
 
 export default TimeStamp;
